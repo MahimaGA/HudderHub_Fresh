@@ -1,0 +1,622 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+    overflow-x: hidden;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navitems {
+    color: black;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: white;
+    color: black;
+    transition: all 0.3s;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    margin-left: 10px;
+
+}
+
+#sidebar.active {
+    margin-left: -250px;
+    color: black;
+
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: white;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid lightblue;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: lightblue;
+    background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: darkgreen;
+    background: #b8d6ce;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+/*  MEDIAQUERIES */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+
+    #sidebar.active {
+        margin-left: 0;
+    }
+
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+#sidebarCollapse {
+
+    background-color: #b8d6ce;
+    border-style: none;
+    width: 40px;
+
+}
+
+.traderui {
+    color: black;
+    font-size: 25px;
+}
+
+.trader-name {
+
+    margin-top: 0;
+}
+
+
+.trader-profile {
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+
+
+
+
+
+
+.col-ting {
+    width: 25em;
+
+}
+
+
+.imgupload {
+
+    height: 120px;
+    width: 120px;
+
+}
+
+.file-upload {
+    .image-box {
+        margin: 0 auto;
+        margin-top: 1em;
+        height: 40px;
+        width: 40px;
+        background: #d24d57;
+        cursor: pointer;
+        overflow: hidden;
+
+
+        img {
+            height: 40px;
+            width: 40px;
+            display: none;
+        }
+
+        p {
+            position: relative;
+            top: 45%;
+            color: #fff;
+        }
+    }
+}
+
+
+#text1 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0%;
+    font-size: 13px;
+}
+
+#text2 {
+
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+}
+
+
+#tbutton {
+    margin-left: 10px;
+}
+
+.table {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+
+}
+
+.labels {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+
+}
+
+
+/* for pop up form  */
+.pk-form {
+    width: 100%;
+    float: left;
+    margin: 5px 0;
+}
+
+.pk-field {
+    width: calc(100% - 16px);
+    float: left;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.pk-field.-multiple {
+    cursor: text;
+}
+
+.pk-arrow {
+    position: absolute;
+    cursor: pointer;
+    right: -2px;
+    bottom: 0;
+    text-align: center;
+    width: 30px;
+    font-family: Arial;
+    border-radius: 0 5px 5px 0;
+    height: 100%;
+}
+
+.pk-arrow:before {
+    transform: rotate(90deg);
+    font-size: 25px;
+    position: relative;
+    content: '›';
+    margin: 5px 0 0 13px;
+    float: left;
+}
+
+.pk-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: #666;
+    background: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1110;
+    transition: opacity .3s;
+}
+
+.pk-overlay.-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.pk-modal {
+    transform: translateX(-50%) scale(0.8, 0.8);
+    left: 50%;
+    top: 10px;
+    border-radius: 6px;
+    position: fixed;
+    width: 280px;
+    z-index: 1111;
+    transition: all .3s;
+    visibility: hidden;
+    background: #f2f2f2;
+    opacity: 0;
+}
+
+.pk-modal>.main {
+    list-style: none;
+    max-height: 60vh;
+    position: relative;
+    overflow-y: auto;
+    width: 100%;
+    margin: 0;
+}
+
+@media(max-width: 480px) {
+    .pk-modal>.main {
+        max-height: 70vh;
+    }
+}
+
+.pk-modal>.head {
+    width: calc(100% - 20px);
+    font-size: 18px;
+    padding: 20px 10px;
+    border-radius: 4px 4px 0 0;
+}
+
+.pk-modal.-show {
+    transform: translateX(-50%) scale(1, 1);
+    visibility: visible;
+    opacity: 1;
+    box-shadow: 0 30px 10px -20px #777;
+}
+
+.pk-search {
+    display: none;
+}
+
+.pk-search.-show {
+    display: block;
+}
+
+.pk-search>input {
+    width: calc(100% - 22px);
+    padding: 8px 4px;
+    margin: 6px;
+    border: 1px solid #ddd;
+}
+
+.pk-no_result_search {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.pk-modal>.close {
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    color: #ccc;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.pk-option,
+.pk-option-group {
+    cursor: pointer;
+    padding: 14px 10px;
+    width: calc(100% - 20px);
+    border-bottom: 1px solid #efefef;
+    position: relative;
+}
+
+.pk-option:last-child {
+    border: none;
+}
+
+.pk-option.-selected:last-child {
+    border-radius: 0 0 4px 4px;
+}
+
+.pk-option-group {
+    cursor: auto;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.pk-option-group:not(:first-child) {
+    margin-top: 14px;
+}
+
+.pk-option>.icon:not(:empty) {
+    width: 16px;
+    margin-right: 10px;
+    color: #ccc;
+    font-size: 20px;
+    float: left;
+    margin-top: -3px;
+    text-align: center;
+}
+
+.pk-option>.txt {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+}
+
+.pk-multiple {
+    position: relative;
+    float: left;
+    width: 100%;
+    display: none;
+}
+
+.pk-multiple.-show {
+    display: block;
+}
+
+.pk-btnMultiply {
+    background: none;
+    border: none;
+    margin-top: 10px;
+    width: 100%;
+    padding-top: 16px;
+    padding-bottom: 18px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-weight: bold;
+    border-radius: 0 0 3px 3px;
+}
+
+.pk-circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 2px;
+    right: 12px;
+}
+
+.pk-option.-selected>.pk-circle {
+    background: #999;
+}
+
+.pk-tag {
+    float: left;
+    cursor: pointer;
+    margin-bottom: 6px;
+}
+
+.pk-tag>.txt {
+    float: left;
+    padding: 6px;
+    padding-right: 22px;
+    border-radius: 6px;
+    position: relative;
+}
+
+.pk-tag>.txt:before {
+    content: '';
+    border: 19px solid transparent;
+    position: absolute;
+    right: -2px;
+    top: -3px;
+}
+
+.pk-tag>.close {
+    float: left;
+    margin: 6px 0 5px;
+    position: relative;
+    left: -8px;
+    font: 700 16px Arial;
+    padding: 0 5px;
+    border-radius: 50%;
+}
+
+/* CLEAN
+---------------------------------*/
+.pk-field.-clean {
+    background: #fff;
+    border: 1px solid #eee;
+    font: inherit;
+}
+
+.pk-arrow.-clean {
+    background: #eee;
+    color: #aaa;
+}
+
+.pk-field.-clean:hover+.pk-arrow,
+.pk-arrow.-clean:hover {
+    background: #dfdfdf;
+    color: #aaa;
+}
+
+.pk-modal.-clean {
+    background: #fff;
+}
+
+.pk-modal.-clean>.head {
+    color: #666;
+    background: #efefef;
+}
+
+.pk-option.-clean:not(:last-child) {
+    border-bottom: 1px solid #efefef;
+}
+
+.pk-option.-clean:hover,
+.pk-option.-clean.-selected {
+    border-radius: 0 0 4px 4px;
+    background: #f2f2f2;
+}
+
+.pk-no_result_search.-clean {
+    color: #666;
+}
+
+.pk-btnMultiply.-clean {
+    background: #1abc9c;
+    color: #fff;
+}
+
+.pk-btnMultiply.-clean:hover {
+    background: #16a085;
+}
+
+.pk-circle.-clean {
+    border-color: #ddd;
+    border: 1px solid #ccc;
+}
+
+.pk-option.-selected>.pk-circle.-clean {
+    background: #1abc9c;
+    border: 2px solid #fff;
+}
+
+.pk-tag>.txt {
+    background: #eeeeee;
+    color: #999;
+}
+
+.pk-tag.-clean>.txt:before {
+    border-right-color: #fff;
+}
+
+.pk-tag.-clean>.close {
+    background: #efefef;
+    color: #bbb;
+}
+
+.pk-tag.-clean>.close:hover {
+    background: #ddd;
+    color: #666;
+}
+
+
+
+#ptextbox {
+    height: 100px;
+}
+
+.remove-product {
+    border: 0;
+    padding: 4px 8px;
+    background-color: #c66;
+    color: #fff;
+    font-family: $font-bold;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.resetpw {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.resetpw2 {
+    font-size: 13px;
+    margin-top: 10px;
+    color: grey;
+}
