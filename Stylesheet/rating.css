@@ -1,0 +1,100 @@
+.star-rating {
+  font-size: 0;
+  position: relative;
+  width: 185px;
+  height: 36px;
+  overflow: hidden;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAkCAYAAAAOwvOmAAACZ0lEQVR42s2Yz0sUYRjH+wVmB4lCOgR66BAegoQU/4SgQ4culSeRoEKiU0QRrHpSwcCDFEREBMGSiMIOdpA9bGwbLTML+1MjQlE8GGmXgpTdPk/MxrLMzsDM484ufFne2ff9vp95nnee9905VKlUVFQqlQa1vFRM0un0CaB2TNPsbBmoYrF4E6hKoVC42zJQAMUECiVaAkpSRqT2bKhyPp/vCh0KoBEBqooUPmgFqI+1UMgKFSqbzZ4TkHpxvSc0KFL1xAkKjYUGRepKTlBc/xIKFJNfEoBGyuVyfWFAPXWDIlrTTYWKRqNHmXTLA2ozEokc8QWFwRAGb9EcWkRLXFtGCfSJtolyaAV9k8nQd3tyL23QdxVlUZr2B9vbQPP2vK/QczTDgzOJrv+7azpMoLIYhazXsrn/Dxnbw1Uu7oYE85tI3aqyOBVDq5lAUj4IyEXXhR6Px4/T8WWTgN6lUqmOega3aj0sYT0gmD/43/dVEghrLyZflaHWARoIVKcsyzoppUIJyMDrtErx5HMYs0cBYMoyXnxUK3p1r/MrUtatvs1wp6MBoe4cBJQZcD3FVKEymcxZhUX+K5lMtqtBYXhbAUpSeEUTKuZ1GkCPSfEPj36zKlCya7tVdkDeSC2rppn2e5e+aypQcnpoMMk2k1xrUNNGZA01ALsQGAqjFw7GC5wozniMO0+/zw5jHwaCkruuO/b+REMeprUnjmNS39BejUciEBSp668xW/b7nkB8AFuxffZpn/INxSM8bq+NexI1hXdYs3YKb/iGYvAzWRs+INyidhnfKd9Q8qdCvrVlGEab2+9/AaqhSf4SQ/sOAAAAAElFTkSuQmCC");
+  background-size: contain;
+  margin: 150px auto;
+}
+
+.star-rating__star {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  opacity: 0;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAkCAYAAAAOwvOmAAACtElEQVR42s2YzWsTQRjG4wf4cRBRRFDRgkEtuzujoOKfIHjw4MWPk4igIuJJRBGqPamg4EEUREQEoSiiYtBDCWibZmakHvSgBil+H9SmbXZGUGl8XsniQpdN2J1mE3gJm8y+89t3nnlmZnP1et1K+NLbYyuXlSRfHi6brxWv1p7ml3QMlC+83UbxupbsUMdAacUeEZRR7FlHQNGQGcl/N6AmRweclZlDGeEdJqAgMJTHMoeCjobCUFryF5lCjQ26qwOYcNSG3O7MoFCVU1FQWnpnMoMykr2OgkJUMoHSwt0YQERXy9nUdihfsotxUL7iF9oK1deXm6Ul+xpbKcU/9/TkZiaCwkK6F9q4jU7uIh4gHuO6n9wZiQWuhyHoVzDIN4gR6gy/fY8BCtvDJ9zzFu1fwvWf47cByo3rAvLca/R7A+2uauVdMoKdqym2899To/FZcmNKlGkIdpMW9//CLXvbQT+WCYxkP2Ej+wOWKWZIjtxmqIovnfWxQh8pds0F2PV2AEFPd36U8wtann1asH1U1mkC+gUNH01kCdDYBoC9s6yfD6bMtqTyqWqxayFZhaXhKkyIdYutmCc+M+AzJ5IDsUm6n/JYdfRgrUsa1cHuVdaXGfjI6ZRDd3AaoNhwKigcLqxCmdKa5elnHTcfSyvmWYPSgh+wMvuEu80eFErfbDcAsz2JdqNNdHXZChSt2rHOLvkt8rJgmGG4T2Ks4b0VKNo9RAuXf0MnO6I8jc6CpKHIHWnJ89JDKXYtYhju+2V3adx9E4qtRTs1BUry46mg6KnD215oZ5x2qq1O7WIxN5v8LTjWt/q+oYkVOJtDC2l/0vcElIe20w0N/hkvOYsSQ6EyvaQNAB2hqqV+h4XZR2C+YLuSQyl+hbSRACLuaLYVD3k+MRQdKujbdlQK+Tlx//8FHj0VVkETdoMAAAAASUVORK5CYII=");
+  background-size: contain;
+}
+
+.star-rating__star ~ .star-rating__star {
+  width: 40%;
+}
+
+.star-rating__star ~ .star-rating__star ~ .star-rating__star {
+  width: 60%;
+}
+
+.star-rating__star ~ .star-rating__star ~ .star-rating__star ~ .star-rating__star {
+  width: 80%;
+}
+
+.star-rating__star ~ .star-rating__star ~ .star-rating__star ~ .star-rating__star ~ .star-rating__star {
+  width: 100%;
+}
+
+.star-rating__input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.star-rating__input:hover + i,
+.star-rating__input:checked + i {
+  opacity: 1;
+}
+
+.star-rating:hover .current-rating {
+  display: none;
+}
+
+.current-rating.current-rating--1 .star-rating__star, .current-rating.current-rating--1-5 .star-rating__star, .current-rating.current-rating--2 .star-rating__star, .current-rating.current-rating--2-5 .star-rating__star, .current-rating.current-rating--3 .star-rating__star, .current-rating.current-rating--3-5 .star-rating__star, .current-rating.current-rating--4 .star-rating__star, .current-rating.current-rating--4-5 .star-rating__star, .current-rating.current-rating--5 .star-rating__star {
+  opacity: 1;
+}
+
+.current-rating.current-rating--1 .star-rating__star {
+  width: 20%;
+}
+
+.current-rating.current-rating--1-5 .star-rating__star {
+  width: 30%;
+}
+
+.current-rating.current-rating--2 .star-rating__star {
+  width: 40%;
+}
+
+.current-rating.current-rating--2-5 .star-rating__star {
+  width: 50%;
+}
+
+.current-rating.current-rating--3 .star-rating__star {
+  width: 60%;
+}
+
+.current-rating.current-rating--3-5 .star-rating__star {
+  width: 70%;
+}
+
+.current-rating.current-rating--4 .star-rating__star {
+  width: 80%;
+}
+
+.current-rating.current-rating--4-5 .star-rating__star {
+  width: 90%;
+}
+
+.current-rating.current-rating--5 .star-rating__star {
+  width: 100%;
+}
