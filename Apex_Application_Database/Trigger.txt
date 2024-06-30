@@ -1,0 +1,160 @@
+--------------------------------------------------------
+--  File created - Thursday-May-23-2024   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Trigger TRIG_CART_ID
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "TRIG_CART_ID" 
+BEFORE INSERT
+ON CART
+FOR EACH ROW
+BEGIN
+if :new.cart_product_id is NULL then
+SELECT product_cart_id_s.NEXTVAL INTO :NEW.cart_product_id FROM SYS.DUAL; 
+end if;
+end TRIG_CART_ID;
+
+/
+ALTER TRIGGER "TRIG_CART_ID" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_ORDER_ID
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "TRIG_ORDER_ID" 
+BEFORE INSERT 
+ON USER_ORDER 
+FOR EACH ROW 
+BEGIN 
+if :new.order_id is NULL then 
+SELECT order_id_s.NEXTVAL INTO :NEW.order_id FROM SYS.DUAL;  
+end if; 
+end TRIG_ORDER_ID; 
+
+/
+ALTER TRIGGER "TRIG_ORDER_ID" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_ORDER_PRODUCT_ID
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "TRIG_ORDER_PRODUCT_ID" 
+BEFORE INSERT ON ORDER_PRODUCT
+FOR EACH ROW
+BEGIN
+    IF :NEW.ORDER_PRODUCT_ID IS NULL THEN
+        SELECT order_product_id_s.NEXTVAL INTO :NEW.ORDER_PRODUCT_ID FROM DUAL;
+    END IF;
+END;
+
+/
+ALTER TRIGGER "TRIG_ORDER_PRODUCT_ID" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_PAYMENT_ID
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "TRIG_PAYMENT_ID" 
+BEFORE INSERT 
+ON PAYMENT 
+FOR EACH ROW 
+BEGIN 
+if :new.payment_id	 is NULL then 
+SELECT payment_id_s.NEXTVAL INTO :NEW.payment_id FROM SYS.DUAL;  
+end if; 
+end TRIG_PAYMENT_ID; 
+
+/
+ALTER TRIGGER "TRIG_PAYMENT_ID" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_PPRODUCT_ID
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "TRIG_PPRODUCT_ID" 
+BEFORE INSERT 
+ON product 
+FOR EACH ROW 
+BEGIN 
+if :new.product_id is NULL then 
+SELECT product_id_s.NEXTVAL INTO :NEW.product_id FROM SYS.DUAL;  
+end if; 
+end TRIG_PPRODUCT_ID; 
+
+/
+ALTER TRIGGER "TRIG_PPRODUCT_ID" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_REVIEW_ID
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "TRIG_REVIEW_ID" 
+BEFORE INSERT ON review 
+FOR EACH ROW 
+BEGIN 
+    IF :NEW.REVIEW_ID IS NULL THEN 
+        SELECT review_id_s.NEXTVAL INTO :NEW.REVIEW_ID FROM DUAL;  
+    END IF; 
+EXCEPTION
+    WHEN DUP_VAL_ON_INDEX THEN
+        NULL;
+END TRIG_REVIEW_ID;
+
+/
+ALTER TRIGGER "TRIG_REVIEW_ID" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_SHOP_ID
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "TRIG_SHOP_ID" 
+BEFORE INSERT 
+ON shop 
+FOR EACH ROW 
+BEGIN 
+if :new.shop_id is NULL then 
+SELECT shop_id_s.NEXTVAL INTO :NEW.shop_id FROM SYS.DUAL;  
+end if; 
+end TRIG_SHOP_ID; 
+
+/
+ALTER TRIGGER "TRIG_SHOP_ID" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_USER_ID
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "TRIG_USER_ID" 
+BEFORE INSERT 
+ON HHF_USER 
+FOR EACH ROW 
+BEGIN 
+if :new.user_id is NULL then 
+SELECT user_id_s.NEXTVAL INTO :NEW.user_id FROM SYS.DUAL;  
+end if; 
+end TRIG_USER_ID; 
+
+/
+ALTER TRIGGER "TRIG_USER_ID" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_WISHLIST_ID
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "TRIG_WISHLIST_ID" BEFORE INSERT ON WISHLIST FOR EACH ROW BEGIN
+  IF :new.wishlist_product_id IS NULL THEN
+    SELECT wishlist_product_id_s.NEXTVAL INTO :NEW.wishlist_product_id FROM DUAL; 
+  END IF;
+END TRIG_WISHLIST_ID;
+
+/
+ALTER TRIGGER "TRIG_WISHLIST_ID" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_review_ID
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "TRIG_review_ID" 
+BEFORE INSERT 
+ON review 
+FOR EACH ROW 
+BEGIN 
+if :new.REVIEW_ID is NULL then 
+SELECT review_id_s.NEXTVAL INTO :NEW.REVIEW_ID FROM SYS.DUAL;  
+end if; 
+end TRIG_review_ID; 
+
+/
+ALTER TRIGGER "TRIG_review_ID" ENABLE;

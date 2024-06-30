@@ -1,0 +1,78 @@
+--------------------------------------------------------
+--  File created - Thursday-May-23-2024   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Sequence DISCOUNT_S
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "DISCOUNT_S"  MINVALUE 0 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  CYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence ORDER_DETAIL_ID_S
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "ORDER_DETAIL_ID_S"  MINVALUE 0 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  CYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence ORDER_DETAIL_S
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "ORDER_DETAIL_S"  MINVALUE 0 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  CYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence ORDER_ID_S
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "ORDER_ID_S"  MINVALUE 0 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 201 CACHE 20 NOORDER  CYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence ORDER_PRODUCT_ID_S
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "ORDER_PRODUCT_ID_S"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 181 CACHE 20 NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence PAYMENT_ID_S
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "PAYMENT_ID_S"  MINVALUE 0 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 181 CACHE 20 NOORDER  CYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence PRODUCT_CART_ID_S
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "PRODUCT_CART_ID_S"  MINVALUE 0 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 201 CACHE 20 NOORDER  CYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence PRODUCT_CATEGORY_ID_S
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "PRODUCT_CATEGORY_ID_S"  MINVALUE 0 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  CYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence PRODUCT_ID_S
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "PRODUCT_ID_S"  MINVALUE 0 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 181 CACHE 20 NOORDER  CYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence PROD_ORDER_S
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "PROD_ORDER_S"  MINVALUE 0 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  CYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence REVIEW_ID_S
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "REVIEW_ID_S"  MINVALUE 0 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 81 CACHE 20 NOORDER  CYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence REVIEW_S
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "REVIEW_S"  MINVALUE 0 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  CYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence SHOP_ID_S
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "SHOP_ID_S"  MINVALUE 0 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 181 CACHE 20 NOORDER  CYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence USER_ID_S
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "USER_ID_S"  MINVALUE 0 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 161 CACHE 20 NOORDER  CYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence WISHLIST_PRODUCT_ID_S
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "WISHLIST_PRODUCT_ID_S"  MINVALUE 0 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 161 CACHE 20 NOORDER  CYCLE ;

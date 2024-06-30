@@ -1,0 +1,227 @@
+--------------------------------------------------------
+--  File created - Thursday-May-23-2024   
+--------------------------------------------------------
+DROP TABLE "CART" cascade constraints;
+DROP TABLE "COLLECTION_SLOT" cascade constraints;
+DROP TABLE "CUSTOMER" cascade constraints;
+DROP TABLE "DISCOUNT" cascade constraints;
+DROP TABLE "HHF_ADMIN" cascade constraints;
+DROP TABLE "HHF_USER" cascade constraints;
+DROP TABLE "ORDER_PRODUCT" cascade constraints;
+DROP TABLE "PAYMENT" cascade constraints;
+DROP TABLE "PRODUCT" cascade constraints;
+DROP TABLE "PRODUCT_CATEGORY" cascade constraints;
+DROP TABLE "PRODUCT_REPORT" cascade constraints;
+DROP TABLE "REPORT" cascade constraints;
+DROP TABLE "REVIEW" cascade constraints;
+DROP TABLE "SHOP" cascade constraints;
+DROP TABLE "TRADER" cascade constraints;
+DROP TABLE "USER_ORDER" cascade constraints;
+DROP TABLE "WISHLIST" cascade constraints;
+--------------------------------------------------------
+--  DDL for Table CART
+--------------------------------------------------------
+
+  CREATE TABLE "CART" ("CART_PRODUCT_ID" NUMBER(*,0), "PRODUCT_QUANTITY" NUMBER(*,0), "PRODUCT_ID" NUMBER(*,0), "USER_ID" NUMBER(*,0), "PURCHASE" NUMBER) ;
+--------------------------------------------------------
+--  DDL for Table COLLECTION_SLOT
+--------------------------------------------------------
+
+  CREATE TABLE "COLLECTION_SLOT" ("COLLECTION_SLOT_ID" NUMBER(6,0), "SLOT_DAY" VARCHAR2(20), "SLOT_TIME" VARCHAR2(255), "SLOT_LOCATION" VARCHAR2(255)) ;
+--------------------------------------------------------
+--  DDL for Table CUSTOMER
+--------------------------------------------------------
+
+  CREATE TABLE "CUSTOMER" ("CUSTOMER_ID" NUMBER(6,0), "CUSTOMER_PHOTO" VARCHAR2(255)) ;
+--------------------------------------------------------
+--  DDL for Table DISCOUNT
+--------------------------------------------------------
+
+  CREATE TABLE "DISCOUNT" ("DISCOUNT_ID" NUMBER(6,0), "DISCOUNT_PERCENT" NUMBER) ;
+--------------------------------------------------------
+--  DDL for Table HHF_ADMIN
+--------------------------------------------------------
+
+  CREATE TABLE "HHF_ADMIN" ("ADMIN_ID" NUMBER(6,0), "USER_ID" NUMBER(6,0)) ;
+--------------------------------------------------------
+--  DDL for Table HHF_USER
+--------------------------------------------------------
+
+  CREATE TABLE "HHF_USER" ("USER_ID" NUMBER(6,0), "FULL_NAME" VARCHAR2(100), "EMAIL" VARCHAR2(50), "USER_PASSWORD" VARCHAR2(100), "USER_ROLE" VARCHAR2(50), "CONTACT_NO" VARCHAR2(50), "CREATED_DATE" DATE, "UPDATED_DATE" DATE, "DATE_OF_BIRTH" DATE, "STATUS" NUMBER(1,0), "USERNAME" VARCHAR2(50), "USER_PHOTO" VARCHAR2(100), "VERIFICATION_CODE" VARCHAR2(255)) ;
+--------------------------------------------------------
+--  DDL for Table ORDER_PRODUCT
+--------------------------------------------------------
+
+  CREATE TABLE "ORDER_PRODUCT" ("ORDER_PRODUCT_ID" NUMBER, "PRODUCT_ID" NUMBER(6,0), "ORDER_ID" NUMBER(6,0), "PRODUCT_QUANTITY" NUMBER) ;
+--------------------------------------------------------
+--  DDL for Table PAYMENT
+--------------------------------------------------------
+
+  CREATE TABLE "PAYMENT" ("PAYMENT_ID" NUMBER(6,0), "AMOUNT" NUMBER(10,2), "PAYMENT_DATE" DATE, "PAYMENT_METHOD" VARCHAR2(50), "USER_ID" NUMBER(6,0), "ORDER_ID" NUMBER(6,0)) ;
+--------------------------------------------------------
+--  DDL for Table PRODUCT
+--------------------------------------------------------
+
+  CREATE TABLE "PRODUCT" ("PRODUCT_ID" NUMBER(6,0), "PRODUCT_NAME" VARCHAR2(30), "PRICE" NUMBER(10,2), "STOCK" NUMBER(10,0), "MIN_ORDER" NUMBER(1,0), "MAX_ORDER" NUMBER(20,0), "ALLERGY_INFORMATION" VARCHAR2(255), "ADD_DATE" DATE, "PRODUCT_STATUS" NUMBER, "PRODUCT_CATEGORY_ID" NUMBER(6,0), "SHOP_ID" NUMBER(6,0), "DISCOUNT_ID" NUMBER(6,0), "PRODUCT_UNIT" VARCHAR2(255), "PRODUCT_IMAGE" VARCHAR2(255), "PRODUCT_DESCRIPTION" VARCHAR2(255)) ;
+--------------------------------------------------------
+--  DDL for Table PRODUCT_CATEGORY
+--------------------------------------------------------
+
+  CREATE TABLE "PRODUCT_CATEGORY" ("PRODUCT_CATEGORY_ID" NUMBER(6,0), "CATEGORY_TYPE" VARCHAR2(30)) ;
+--------------------------------------------------------
+--  DDL for Table PRODUCT_REPORT
+--------------------------------------------------------
+
+  CREATE TABLE "PRODUCT_REPORT" ("PRODUCT_ID" NUMBER(6,0), "REPORT_ID" NUMBER(6,0)) ;
+--------------------------------------------------------
+--  DDL for Table REPORT
+--------------------------------------------------------
+
+  CREATE TABLE "REPORT" ("REPORT_ID" NUMBER(6,0), "REPORT_DETAILS" VARCHAR2(50), "USER_ID" NUMBER(6,0), "PRODUCT_ID" NUMBER(6,0)) ;
+--------------------------------------------------------
+--  DDL for Table REVIEW
+--------------------------------------------------------
+
+  CREATE TABLE "REVIEW" ("REVIEW_ID" NUMBER(6,0), "REVIEW" VARCHAR2(255), "REVIEW_RATING" NUMBER(1,0), "REVIEW_DATE" DATE, "USER_ID" NUMBER(6,0), "PRODUCT_ID" NUMBER(6,0)) ;
+--------------------------------------------------------
+--  DDL for Table SHOP
+--------------------------------------------------------
+
+  CREATE TABLE "SHOP" ("SHOP_ID" NUMBER(6,0), "SHOP_NAME" VARCHAR2(32), "REGISTRATION_NO" NUMBER(10,0), "USER_ID" NUMBER(6,0), "STATUS" VARCHAR2(255), "SHOP_LOCATION" VARCHAR2(255), "SHOP_LOGO" VARCHAR2(255)) ;
+--------------------------------------------------------
+--  DDL for Table TRADER
+--------------------------------------------------------
+
+  CREATE TABLE "TRADER" ("TRADER_ID" NUMBER(6,0), "SHOP_NAME" VARCHAR2(100)) ;
+--------------------------------------------------------
+--  DDL for Table USER_ORDER
+--------------------------------------------------------
+
+  CREATE TABLE "USER_ORDER" ("ORDER_ID" NUMBER(6,0), "ORDER_DATE" DATE, "ORDER_STATUS" VARCHAR2(50), "COLLECTION_SLOT_ID" NUMBER(6,0), "CART_PRODUCT_ID" NUMBER(6,0), "COLLECTION_SLOT_DATE" DATE) ;
+--------------------------------------------------------
+--  DDL for Table WISHLIST
+--------------------------------------------------------
+
+  CREATE TABLE "WISHLIST" ("WISHLIST_PRODUCT_ID" NUMBER(*,0), "PRODUCT_ID" NUMBER(*,0), "USER_ID" NUMBER(*,0)) ;
+--------------------------------------------------------
+--  Constraints for Table CUSTOMER
+--------------------------------------------------------
+
+  ALTER TABLE "CUSTOMER" ADD PRIMARY KEY ("CUSTOMER_ID") ENABLE;
+--------------------------------------------------------
+--  Constraints for Table CART
+--------------------------------------------------------
+
+  ALTER TABLE "CART" ADD CONSTRAINT "PK_CART" PRIMARY KEY ("CART_PRODUCT_ID") ENABLE;
+  ALTER TABLE "CART" MODIFY ("USER_ID" NOT NULL ENABLE);
+  ALTER TABLE "CART" MODIFY ("PRODUCT_ID" NOT NULL ENABLE);
+  ALTER TABLE "CART" MODIFY ("CART_PRODUCT_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table REPORT
+--------------------------------------------------------
+
+  ALTER TABLE "REPORT" ADD CONSTRAINT "PK_REPORT" PRIMARY KEY ("REPORT_ID") ENABLE;
+  ALTER TABLE "REPORT" MODIFY ("REPORT_DETAILS" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table HHF_ADMIN
+--------------------------------------------------------
+
+  ALTER TABLE "HHF_ADMIN" ADD PRIMARY KEY ("ADMIN_ID") ENABLE;
+--------------------------------------------------------
+--  Constraints for Table COLLECTION_SLOT
+--------------------------------------------------------
+
+  ALTER TABLE "COLLECTION_SLOT" ADD CONSTRAINT "PK_COLLECTION_SLOT" PRIMARY KEY ("COLLECTION_SLOT_ID") ENABLE;
+  ALTER TABLE "COLLECTION_SLOT" MODIFY ("SLOT_TIME" NOT NULL ENABLE);
+  ALTER TABLE "COLLECTION_SLOT" MODIFY ("SLOT_DAY" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ORDER_PRODUCT
+--------------------------------------------------------
+
+  ALTER TABLE "ORDER_PRODUCT" ADD PRIMARY KEY ("ORDER_PRODUCT_ID") ENABLE;
+  ALTER TABLE "ORDER_PRODUCT" MODIFY ("ORDER_PRODUCT_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table PAYMENT
+--------------------------------------------------------
+
+  ALTER TABLE "PAYMENT" ADD CONSTRAINT "PK_PAYMENT" PRIMARY KEY ("PAYMENT_ID") ENABLE;
+  ALTER TABLE "PAYMENT" MODIFY ("PAYMENT_METHOD" NOT NULL ENABLE);
+  ALTER TABLE "PAYMENT" MODIFY ("PAYMENT_DATE" NOT NULL ENABLE);
+  ALTER TABLE "PAYMENT" MODIFY ("AMOUNT" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table USER_ORDER
+--------------------------------------------------------
+
+  ALTER TABLE "USER_ORDER" ADD CONSTRAINT "PK_USER_ORDER" PRIMARY KEY ("ORDER_ID") ENABLE;
+  ALTER TABLE "USER_ORDER" MODIFY ("ORDER_STATUS" NOT NULL ENABLE);
+  ALTER TABLE "USER_ORDER" MODIFY ("ORDER_DATE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table PRODUCT_CATEGORY
+--------------------------------------------------------
+
+  ALTER TABLE "PRODUCT_CATEGORY" ADD CONSTRAINT "PK_PRODUCT_CATEGORY_ID" PRIMARY KEY ("PRODUCT_CATEGORY_ID") ENABLE;
+  ALTER TABLE "PRODUCT_CATEGORY" MODIFY ("CATEGORY_TYPE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table HHF_USER
+--------------------------------------------------------
+
+  ALTER TABLE "HHF_USER" MODIFY ("USERNAME" NOT NULL ENABLE);
+  ALTER TABLE "HHF_USER" ADD CONSTRAINT "CHK_STATUS" CHECK (status IN (0, 1)) ENABLE;
+  ALTER TABLE "HHF_USER" ADD CONSTRAINT "PK_USER_ID" PRIMARY KEY ("USER_ID") ENABLE;
+  ALTER TABLE "HHF_USER" ADD UNIQUE ("EMAIL") ENABLE;
+  ALTER TABLE "HHF_USER" MODIFY ("STATUS" NOT NULL ENABLE);
+  ALTER TABLE "HHF_USER" MODIFY ("DATE_OF_BIRTH" NOT NULL ENABLE);
+  ALTER TABLE "HHF_USER" MODIFY ("CREATED_DATE" NOT NULL ENABLE);
+  ALTER TABLE "HHF_USER" MODIFY ("CONTACT_NO" NOT NULL ENABLE);
+  ALTER TABLE "HHF_USER" MODIFY ("USER_ROLE" NOT NULL ENABLE);
+  ALTER TABLE "HHF_USER" MODIFY ("USER_PASSWORD" NOT NULL ENABLE);
+  ALTER TABLE "HHF_USER" MODIFY ("FULL_NAME" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table WISHLIST
+--------------------------------------------------------
+
+  ALTER TABLE "WISHLIST" ADD CONSTRAINT "PK_WISHLIST" PRIMARY KEY ("WISHLIST_PRODUCT_ID") ENABLE;
+  ALTER TABLE "WISHLIST" MODIFY ("USER_ID" NOT NULL ENABLE);
+  ALTER TABLE "WISHLIST" MODIFY ("PRODUCT_ID" NOT NULL ENABLE);
+  ALTER TABLE "WISHLIST" MODIFY ("WISHLIST_PRODUCT_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table REVIEW
+--------------------------------------------------------
+
+  ALTER TABLE "REVIEW" ADD CONSTRAINT "PK_REVIEW_ID" PRIMARY KEY ("REVIEW_ID") ENABLE;
+  ALTER TABLE "REVIEW" MODIFY ("REVIEW_DATE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table DISCOUNT
+--------------------------------------------------------
+
+  ALTER TABLE "DISCOUNT" ADD CONSTRAINT "PK_DISCOUNT_ID" PRIMARY KEY ("DISCOUNT_ID") ENABLE;
+--------------------------------------------------------
+--  Constraints for Table SHOP
+--------------------------------------------------------
+
+  ALTER TABLE "SHOP" ADD CONSTRAINT "PK_SHOP_ID" PRIMARY KEY ("SHOP_ID") ENABLE;
+  ALTER TABLE "SHOP" ADD UNIQUE ("SHOP_NAME") ENABLE;
+  ALTER TABLE "SHOP" MODIFY ("REGISTRATION_NO" NOT NULL ENABLE);
+  ALTER TABLE "SHOP" MODIFY ("SHOP_NAME" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table TRADER
+--------------------------------------------------------
+
+  ALTER TABLE "TRADER" ADD PRIMARY KEY ("TRADER_ID") ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PRODUCT
+--------------------------------------------------------
+
+  ALTER TABLE "PRODUCT" ADD CONSTRAINT "PK_PRODUCT_ID" PRIMARY KEY ("PRODUCT_ID") ENABLE;
+  ALTER TABLE "PRODUCT" MODIFY ("PRODUCT_STATUS" NOT NULL ENABLE);
+  ALTER TABLE "PRODUCT" MODIFY ("ADD_DATE" NOT NULL ENABLE);
+  ALTER TABLE "PRODUCT" MODIFY ("MAX_ORDER" NOT NULL ENABLE);
+  ALTER TABLE "PRODUCT" MODIFY ("MIN_ORDER" NOT NULL ENABLE);
+  ALTER TABLE "PRODUCT" MODIFY ("STOCK" NOT NULL ENABLE);
+  ALTER TABLE "PRODUCT" MODIFY ("PRICE" NOT NULL ENABLE);
+  ALTER TABLE "PRODUCT" MODIFY ("PRODUCT_NAME" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table PRODUCT_REPORT
+--------------------------------------------------------
+
+  ALTER TABLE "PRODUCT_REPORT" ADD PRIMARY KEY ("PRODUCT_ID", "REPORT_ID") ENABLE;
